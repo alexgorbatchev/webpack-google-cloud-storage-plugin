@@ -79,7 +79,8 @@ module.exports = function () {
           gzip: _propTypes2.default.bool,
           public: _propTypes2.default.bool,
           destinationNameFn: _propTypes2.default.func,
-          makePublic: _propTypes2.default.bool
+          makePublic: _propTypes2.default.bool,
+          resumable: _propTypes2.default.bool
         })
       };
     }
@@ -205,7 +206,8 @@ module.exports = function () {
         return bucket.upload(file.path, {
           destination: _this4.uploadOptions.destinationNameFn(file),
           gzip: _this4.uploadOptions.gzip || false,
-          public: _this4.uploadOptions.makePublic || false
+          public: _this4.uploadOptions.makePublic || false,
+          resumable: _this4.uploadOptions.resumable
         });
       });
       return _bluebird2.default.all(uploadFiles);
